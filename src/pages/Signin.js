@@ -2,6 +2,12 @@ import React from 'react';
 import Businesslist from "./Businesslist";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import axios from 'axios';
+import logo from '../img/logo.png';
+import id from '../img/id.png';
+import pwd from '../img/pwd.png';
+import loginBtn from '../img/login.png';
+import google from '../img/google.png';
+import ilggun from '../img/ilggun.png';
 
 class Signin extends React.Component {
   constructor(props) {
@@ -94,38 +100,67 @@ class Signin extends React.Component {
         return (
             <div>
                 <Router>
+                  <div style={styles.container}>
+                    <div style={styles.logoArea}>
+                     <img src={logo} style={styles.logoStyle}/>
+                    </div>
                     <div>
                     <form onSubmit={this.handleSubmit}>
+                        
+                      <div style={styles.idArea}>
                         {/* 아이디 인풋창 */}
-                        <div>
-                        <span>ID : </span>
-                        <input
-                            placeholder="아이디를 입력하세요"
-                            value={this.state.id}
-                            onChange={this.handleId}
-                        />
+                        <div style={{display:'flex', justifyContent:'center',}}>
+                          <img src={id} style={styles.idStyle}/>
+                          <input
+                              placeholder="아이디를 입력하세요"
+                              value={this.state.id}
+                              onChange={this.handleId}
+                              style={styles.inputStyle}
+                          />
                         </div>
                         {/* 비밀번호 인풋 */}
-                        <div>
-                        <span>Password : </span>
-                        <input
-                            placeholder="비밀번호를 입력하세요"
-                            value={this.state.password}
-                            onChange={this.handlePassword}
-                            type="password"
-                        />
+                        <div style={{paddingTop:'1.5vh', display:'flex', justifyContent:'center',}}>
+                          <img src={pwd} style={styles.pwdStyle}/>
+                          <input
+                              placeholder="비밀번호를 입력하세요"
+                              value={this.state.password}
+                              onChange={this.handlePassword}
+                              style={styles.inputStyle}
+                              type="password"
+                          />
                         </div>
+                        </div>
+                        
+                        <div style={styles.btnArea}>
                         <div>
                         {/* 로그인버튼 , 회원가입버튼*/}
-                        <button type="submit">로그인</button>
+                        <button type="submit" style={styles.btnStyle}>
+                          <img src={loginBtn} style={styles.loginBtnStyle}/>
+                        </button>
                         {/* 회원가입 버튼 클릭 -> /signup페이지로 이동 
                         <button onClick={() => this.props.history.push("/signup")}>
                             회원가입
                         </button>
                         */}
                         </div>
+                        <div style={{paddingTop:'0.5vh'}}>
+                        {/* 로그인버튼 , 회원가입버튼*/}
+                        <button type="" style={styles.btnStyle}>
+                          <img src={google} style={styles.loginBtnStyle}/>
+                        </button>
+                        {/* 회원가입 버튼 클릭 -> /signup페이지로 이동 
+                        <button onClick={() => this.props.history.push("/signup")}>
+                            회원가입
+                        </button>
+                        */}
+                        </div>
+                        </div>
                     </form>
                     </div>
+                    <div style={styles.ilArea}>
+                     <img src={ilggun} style={styles.ilStyle}/>
+                    </div>
+                  </div>
                 </Router>
             </div>
         );
@@ -133,3 +168,95 @@ class Signin extends React.Component {
 };
 
 export default Signin;
+
+const styles = {
+  container: {
+    // backgroundImage: `url(${Background})`,
+    // backgroundPosition: 'center',
+    // backgroundSize: 'cover',
+    // backgroundRepeat: 'no-repeat',
+    width:'100vw',
+    height: '100vh', 
+    display:'flex',
+    justifyContent:'center',
+    alignItems:'center',
+    flexDirection:'column'
+  },
+  logoArea:{
+    height: '52vh', 
+    //backgroundColor:'red',
+    display:'flex',
+    alignItems:'center',
+  },
+  logoStyle:{
+    width:'10vw',
+    height:'10vw'
+  },
+  idArea:{
+    height:'17vh',
+    display:'flex',
+    justifyContent:'flex-start',
+    alignItems:'center',
+    flexDirection:'column',
+    //backgroundColor:'green'
+  },
+  idStyle :{
+    width:'5vw',
+    height:'1.9vw',
+    marginRight:'3.5vw',
+    marginTop:'0.1vw'
+    //backgroundColor:'red'
+  },
+  pwdStyle:{
+    width:'6.3vw',
+    height:'2vw',
+    marginRight:'2.3vw',
+    marginTop:'0.2vw'
+    //backgroundColor:'yellow'
+  },
+  inputStyle:{
+    width:'20vw',
+    height:'2vw',
+    backgroundColor:'white',
+    borderRadius:'3vw',
+    borderColor:'#67C8BA',
+    borderWidth:'0.2vw',
+    borderStyle:'solid',
+    paddingTop:'0.1vw',
+    paddingBottom:'0.1vw',
+    paddingLeft:'1vw',
+    boxShadow:0
+    //backgroundColor:'pink'
+  },
+  btnArea:{
+    height:'15vh',
+    //backgroundColor:'yellow',
+    display:'flex',
+    justifyContent:'center',
+    flexDirection:'column'
+  },
+  btnStyle:{
+    width:'32vw',
+    height:'3.1vw',
+    backgroundColor:'white',
+    borderWidth:0,
+    borderColor:'white',
+    borderRadius:'10px',
+  },
+  loginBtnStyle:{
+    width:'100%',
+    height:'100%'
+  },
+  ilArea:{
+    height:'15vh',
+    display:'flex',
+    justifyContent:'center',
+    alignItems:'flex-end',
+    paddingBottom:'3vh',
+    //backgroundColor:'blue'
+  },
+  ilStyle:{
+    width:'7vw',
+    height:'1.2vw',
+  }
+};
