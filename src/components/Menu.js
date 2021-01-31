@@ -8,7 +8,7 @@ const Menu = () => {
     };
     return (
         <div>
-            <NavLink exact to="/Businesslist" activeStyle={activeStyle}>사업장 선택</NavLink> <NavLink exact to="/" activeStyle={activeStyle}>Logout</NavLink>
+            {/* <NavLink exact to="/Businesslist" activeStyle={activeStyle}>사업장 선택</NavLink> <NavLink exact to="/" activeStyle={activeStyle}>Logout</NavLink> */}
             <ul>
                 <li><NavLink exact to="/Workmanage" activeStyle={activeStyle}>근무 관리</NavLink></li>
                 <li><NavLink exact to="/Workermanage" activeStyle={activeStyle}>근로자 관리</NavLink></li>
@@ -18,7 +18,7 @@ const Menu = () => {
                 <li><NavLink exact to="/Businesslist" activeStyle={activeStyle}>About</NavLink></li>
                 <li><NavLink exact to="/Businesslist/foo" activeStyle={activeStyle}>About Foo</NavLink></li>*/}
             </ul>
-            <hr/>
+            {/* <hr/> */}
         </div>
     );
 };
