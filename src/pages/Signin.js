@@ -109,7 +109,7 @@ class Signin extends React.Component {
                         
                       <div style={styles.idArea}>
                         {/* 아이디 인풋창 */}
-                        <div style={{display:'flex', justifyContent:'center',}}>
+                        <div style={styles.bottom}>
                           <img src={id} style={styles.idStyle}/>
                           <input
                               placeholder="아이디를 입력하세요"
@@ -118,8 +118,9 @@ class Signin extends React.Component {
                               style={styles.inputStyle}
                           />
                         </div>
+                        <div style={{paddingTop:'1.5vw'}}></div>
                         {/* 비밀번호 인풋 */}
-                        <div style={{paddingTop:'1.5vh', display:'flex', justifyContent:'center',}}>
+                        <div style={styles.bottom}>
                           <img src={pwd} style={styles.pwdStyle}/>
                           <input
                               placeholder="비밀번호를 입력하세요"
@@ -171,10 +172,6 @@ export default Signin;
 
 const styles = {
   container: {
-    // backgroundImage: `url(${Background})`,
-    // backgroundPosition: 'center',
-    // backgroundSize: 'cover',
-    // backgroundRepeat: 'no-repeat',
     width:'100vw',
     height: '100vh', 
     display:'flex',
@@ -184,7 +181,6 @@ const styles = {
   },
   logoArea:{
     height: '52vh', 
-    //backgroundColor:'red',
     display:'flex',
     alignItems:'center',
   },
@@ -198,39 +194,43 @@ const styles = {
     justifyContent:'flex-start',
     alignItems:'center',
     flexDirection:'column',
-    //backgroundColor:'green'
+  },
+  bottom:{
+    display:'flex', 
+    justifyContent:'center',
+    paddingBottom:'0.3vw',
+    borderColor:'white',
+    borderBottomColor:'#67C8BA',
+    borderBottomWidth:'0.2vw',
+    borderStyle:'solid',
   },
   idStyle :{
     width:'5vw',
     height:'1.9vw',
     marginRight:'3.5vw',
     marginTop:'0.1vw'
-    //backgroundColor:'red'
   },
   pwdStyle:{
     width:'6.3vw',
     height:'2vw',
     marginRight:'2.3vw',
     marginTop:'0.2vw'
-    //backgroundColor:'yellow'
   },
   inputStyle:{
     width:'20vw',
     height:'2vw',
+    fontSize:'15px',
     backgroundColor:'white',
-    borderRadius:'3vw',
-    borderColor:'#67C8BA',
-    borderWidth:'0.2vw',
+    borderColor:'white',
+    borderWidth:0,
     borderStyle:'solid',
     paddingTop:'0.1vw',
     paddingBottom:'0.1vw',
     paddingLeft:'1vw',
     boxShadow:0
-    //backgroundColor:'pink'
   },
   btnArea:{
     height:'15vh',
-    //backgroundColor:'yellow',
     display:'flex',
     justifyContent:'center',
     flexDirection:'column'
