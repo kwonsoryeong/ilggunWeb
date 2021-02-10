@@ -220,6 +220,8 @@ const styles = {
     width:'20vw',
     height:'2vw',
     fontSize:'15px',
+    color:'#040525',
+    fontFamily: 'NanumSquareR',
     backgroundColor:'white',
     borderColor:'white',
     borderWidth:0,

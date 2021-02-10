@@ -112,7 +112,7 @@ const styles={
     },
     menuArea:{
         width:'20vw',
-        height:'100%', 
+        height:'120%', 
         flexDirection:'column', 
         float:'left',
         backgroundColor:'#8ECEC2',
@@ -132,7 +132,9 @@ const styles={
         fontSize:'18px', 
         marginLeft:'4vw', 
         marginRight:'2vw',
-        fontWeight:'bold'
+        fontWeight:'bold',
+        color:'#040525',
+        fontFamily: 'NanumSquareR'
     },
     calendarArea:{
         width:'70vw',

@@ -74,10 +74,14 @@ const styles={
     tabTextStyle:{
         width:'12vw',
         fontSize:'18px', 
-        fontWeight:'bold'
+        fontWeight:'bold',
+        color:'#040525',
+        fontFamily: 'NanumSquareR'
     },
     tabtextStyle2:{
         fontSize:'18px', 
+        color:'#040525',
+        fontFamily: 'NanumSquareR'
 
     }
 }

@@ -10,13 +10,13 @@ const Header = () => {
         <div style={styles.area}>
             <div style={styles.titleAera}><text style={styles.titleStyle}>투진컴퍼니</text></div>
             <div style={styles.textArea}>
-                <text>admin님 반갑습니다.</text> 
+                <text style={styles.textStyle}>admin님 반갑습니다.</text> 
             </div>
             <div style={styles.selectArea}>
-                <NavLink exact to="/Businesslist" activeStyle={activeStyle} style={{textDecoration:'none', color:'#040525'}}>사업장 선택</NavLink> 
+                <NavLink exact to="/Businesslist" activeStyle={activeStyle} style={styles.textStyle}>사업장 선택</NavLink> 
             </div>
             <div style={styles.logoutArea}>
-                <NavLink exact to="/" activeStyle={activeStyle} style={{marginLeft:'3vw',textDecoration:'none', color:'#040525'}}>Logout</NavLink>
+                <NavLink exact to="/" activeStyle={activeStyle} style={{marginLeft:'3vw'}, styles.textStyle}>Logout</NavLink>
             </div>
         </div>
     );
@@ -53,6 +53,13 @@ const styles={
         width:'40vw',
         fontSize:'25px',
         fontWeight:'bold',
-        marginLeft:'2vw'
+        marginLeft:'2vw',
+        color:'#040525',
+        fontFamily: 'NanumSquareR'
+    },
+    textStyle:{
+        textDecoration:'none', 
+        color:'#040525',
+        fontFamily: 'NanumSquareR'
     }
 }

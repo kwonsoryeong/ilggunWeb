@@ -1,35 +1,23 @@
 import React, {useState} from 'react';
 import { NavLink, Link} from 'react-router-dom';
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import 'react-tabs/style/react-tabs.css';
 
 const Menu = () => {
     const activeStyle = {
-        backgroundColor:'white'
+        backgroundColor:'white',
+        fontWeight:'bold'
     };
-    const [color,changeColor] = useState('#8ECEC2')
     
     return (
         <div>
             <div style={{width:'20vw', marginTop:'4vw'}}>
-                {/* <Tabs vertical>
-                    <TabList >
-                        <Tab style={styles.liStyle}><NavLink exact to="/Workmanage" activeStyle={activeStyle} style={styles.textStyle}>근무관리</NavLink></Tab>
-                        <Tab style={styles.liStyle}><NavLink exact to="/Workermanage" activeStyle={activeStyle} style={styles.textStyle}>근로자관리</NavLink></Tab>
-                        <Tab style={styles.liStyle}><NavLink exact to="/Pay" activeStyle={activeStyle} style={styles.textStyle}>월급</NavLink></Tab>
-                        <Tab style={styles.liStyle}><NavLink exact to="/Message" activeStyle={activeStyle} style={styles.textStyle}>메세지</NavLink></Tab>
-                    </TabList>
-
-                </Tabs> */}
-                <div style={styles.liStyle}><NavLink exact to="/WorkManage" activeStyle={activeStyle} style={styles.textStyle}>근무관리</NavLink></div>
-                <div style={styles.liStyle}><NavLink exact to="/Workermanage" activeStyle={activeStyle} style={styles.textStyle}>근로자 관리</NavLink></div>
-                <div style={styles.liStyle}><NavLink exact to="/Pay" activeStyle={activeStyle} style={styles.textStyle}>월급</NavLink></div>
-                <div style={styles.liStyle}><NavLink exact to="/Message" activeStyle={activeStyle} style={styles.textStyle}>메세지</NavLink></div> 
+                <div style={styles.liStyle}><NavLink exact to="/WorkManage" activeStyle={activeStyle} style={styles.textStyle1}>근무관리</NavLink></div>
+                <div style={styles.liStyle}><NavLink exact to="/Workermanage" activeStyle={activeStyle} style={styles.textStyle2}>근로자 관리</NavLink></div>
+                <div style={styles.liStyle}><NavLink exact to="/Pay" activeStyle={activeStyle} style={styles.textStyle3}>월급</NavLink></div>
+                <div style={styles.liStyle}><NavLink exact to="/Message" activeStyle={activeStyle} style={styles.textStyle4}>메세지</NavLink></div> 
                 {/*<li><NavLink exact to="/posts" activeStyle={activeStyle}>Posts</NavLink></li>
                 <li><NavLink exact to="/Businesslist" activeStyle={activeStyle}>About</NavLink></li>
                 <li><NavLink exact to="/Businesslist/foo" activeStyle={activeStyle}>About Foo</NavLink></li>*/}
             </div>
-            {/* <hr/> */}
         </div>
     );
 };
@@ -57,9 +45,44 @@ const styles={
         width:'20vw',
         backgroundColor:'red'
     },
-    textStyle:{
+    textStyle1:{
         width:'25vw',
         textDecoration:'none', 
         color:'#040525',
+        paddingTop:'1vw', paddingBottom:'1vw',
+        paddingLeft:'4.35vw', paddingRight:'4.35vw',
+        borderRadius:'1vw',
+        color:'#040525',
+        fontFamily: 'NanumSquareR'
+    },
+    textStyle2:{
+        width:'25vw',
+        textDecoration:'none', 
+        color:'#040525',
+        paddingTop:'1vw', paddingBottom:'1vw',
+        paddingLeft:'3.5vw', paddingRight:'3.5vw',
+        borderRadius:'1vw',
+        color:'#040525',
+        fontFamily: 'NanumSquareR'
+    },
+    textStyle3:{
+        width:'25vw',
+        textDecoration:'none', 
+        color:'#040525',
+        paddingTop:'1vw', paddingBottom:'1vw',
+        paddingLeft:'5.6vw', paddingRight:'5.6vw',
+        borderRadius:'1vw',
+        color:'#040525',
+        fontFamily: 'NanumSquareR'
+    },
+    textStyle4:{
+        width:'25vw',
+        textDecoration:'none', 
+        color:'#040525',
+        paddingTop:'1vw', paddingBottom:'1vw',
+        paddingLeft:'5vw', paddingRight:'5vw',
+        borderRadius:'1vw',
+        color:'#040525',
+        fontFamily: 'NanumSquareR'
     }
 }
