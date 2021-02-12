@@ -129,7 +129,7 @@ const styles={
         textAlign:'center',
     },
     tabTextStyle:{
-        fontSize:'18px', 
+        fontSize:'1.5vw', 
         marginLeft:'4vw', 
         marginRight:'2vw',
         fontWeight:'bold',

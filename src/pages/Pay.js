@@ -73,7 +73,7 @@ const styles={
     },
     tabTextStyle:{
         width:'12vw',
-        fontSize:'18px', 
+        fontSize:'1.5vw', 
         fontWeight:'bold',
         color:'#040525',
         fontFamily: 'NanumSquareR'
