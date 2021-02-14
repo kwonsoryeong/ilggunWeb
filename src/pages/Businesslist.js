@@ -9,6 +9,7 @@ const Businesslist = ({location, match, history}) => {
     const detail = query.detail === 'true';
     const [business, setBusiness] = useState([]);
     useEffect(() => {
+        
         fetchData();
     }, []);
     async function fetchData() { 
@@ -31,7 +32,7 @@ const Businesslist = ({location, match, history}) => {
             {
                 business.map((b, id) => 
                 (
-                    <li key={id}><Link to='/Workmanage'>{b.bname}</Link></li>
+                    <li key={id}><Link to={`/Workmanage/${match.params.id}/${b.bname}`}>{b.bname}</Link></li>
                 ))
             }
             </ul>

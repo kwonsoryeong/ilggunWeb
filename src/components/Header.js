@@ -1,19 +1,19 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-const Header = () => {
+const Header = (props) => {
     const activeStyle = {
         color: 'green',
         fontSize: '2rem'
     };
     return (
         <div style={styles.area}>
-            <div style={styles.titleAera}><text style={styles.titleStyle}>투진컴퍼니</text></div>
+            <div style={styles.titleAera}><text style={styles.titleStyle}>{props.bangbang}</text></div>
             <div style={styles.textArea}>
-                <text style={styles.textStyle}>admin님 반갑습니다.</text> 
+                <text style={styles.textStyle}>{props.idid}님 반갑습니다.</text> 
             </div>
             <div style={styles.selectArea}>
-                <NavLink exact to="/Businesslist" activeStyle={activeStyle} style={styles.textStyle}>사업장 선택</NavLink> 
+                <NavLink exact to={`/Businesslist/${props.idid}`} activeStyle={activeStyle} style={styles.textStyle}>사업장 선택</NavLink> 
             </div>
             <div style={styles.logoutArea}>
                 <NavLink exact to="/" activeStyle={activeStyle} style={{marginLeft:'3vw'}, styles.textStyle}>Logout</NavLink>

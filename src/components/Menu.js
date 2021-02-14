@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { NavLink, Link} from 'react-router-dom';
 
-const Menu = () => {
+const Menu = (props) => {
     const activeStyle = {
         backgroundColor:'white',
         fontWeight:'bold'
@@ -10,7 +10,7 @@ const Menu = () => {
     return (
         <div>
             <div style={{width:'20vw', marginTop:'4vw'}}>
-                <div style={styles.liStyle}><NavLink exact to="/WorkManage" activeStyle={activeStyle} style={styles.textStyle1}>근무관리</NavLink></div>
+                <div style={styles.liStyle}><NavLink exact to={`/WorkManage/${props.idid}/${props.bangbang}`} activeStyle={activeStyle} style={styles.textStyle1}>근무관리</NavLink></div>
                 <div style={styles.liStyle}><NavLink exact to="/Workermanage" activeStyle={activeStyle} style={styles.textStyle2}>근로자 관리</NavLink></div>
                 <div style={styles.liStyle}><NavLink exact to="/Pay" activeStyle={activeStyle} style={styles.textStyle3}>월급</NavLink></div>
                 <div style={styles.liStyle}><NavLink exact to="/Message" activeStyle={activeStyle} style={styles.textStyle4}>메세지</NavLink></div> 
