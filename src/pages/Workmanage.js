@@ -285,16 +285,16 @@ const Workmanage = ({location, match}) => {
                     //detail값이 있을 때만 뒤에 문자열이 나옴
                 }  */}
                 <div style={styles1.tableArea}>
-                    <Table>
+                    <Table style={{width:'65vw', marginTop:'2vw'}}>
                         <TableHead>
-                            <TableRow>
-                                <TableCell style={styles1.textStyle}>TYPE</TableCell>
-                                <TableCell style={styles1.textStyle}>이름</TableCell>
-                                <TableCell style={styles1.textStyle}>업무</TableCell>
-                                <TableCell style={styles1.textStyle}>입사일</TableCell>
-                                <TableCell style={styles1.textStyle}>근로시간</TableCell>
-                                <TableCell style={styles1.textStyle}>급여</TableCell>
-                                <TableCell style={styles1.textStyle}>계약서</TableCell>
+                            <TableRow style={{background:'#8ECEC2'}}>
+                                <TableCell align="center" style={styles1.textStyle,{width:'8vw', fontWeight:'bold'}}>근무형태</TableCell>
+                                <TableCell align="center" style={styles1.textStyle,{width:'10vw', fontWeight:'bold'}}>이름</TableCell>
+                                <TableCell align="center" style={styles1.textStyle,{width:'10vw', fontWeight:'bold'}}>업무</TableCell>
+                                <TableCell align="center" style={styles1.textStyle,{width:'10vw', fontWeight:'bold'}}>입사일</TableCell>
+                                <TableCell align="center" style={styles1.textStyle,{width:'10vw', fontWeight:'bold'}}>근로시간</TableCell>
+                                <TableCell align="center" style={styles1.textStyle,{width:'10vw', fontWeight:'bold'}}>급여</TableCell>
+                                <TableCell align="center" style={styles1.textStyle,{width:'7vw', fontWeight:'bold'}}>계약서</TableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody>
@@ -302,12 +302,12 @@ const Workmanage = ({location, match}) => {
                                 //getInd();
                                 return (
                                 <TableRow>
-                                    <TableCell style={styles1.textStyle}>{c.type==2?"정규/계약":"단기/일용"}</TableCell>
-                                    <TableCell style={styles1.textStyle}>{c.workername}</TableCell>
-                                    <TableCell style={styles1.textStyle}>업무</TableCell>
-                                    <TableCell style={styles1.textStyle}>{c.startdate}</TableCell>
-                                    <TableCell style={styles1.textStyle}>{c.eachtime}</TableCell>
-                                    <TableCell style={styles1.textStyle}>{c.pay*1}</TableCell>
+                                    <TableCell align="center" tyle={styles1.textStyle}>{c.type==2?"정규/계약":"단기/일용"}</TableCell>
+                                    <TableCell align="center" style={styles1.textStyle}>{c.workername}</TableCell>
+                                    <TableCell align="center" style={styles1.textStyle}>업무</TableCell>
+                                    <TableCell align="center" style={styles1.textStyle}>{c.startdate}</TableCell>
+                                    <TableCell align="center" style={styles1.textStyle}>{c.eachtime}</TableCell>
+                                    <TableCell align="center" style={styles1.textStyle}>{c.pay*1}</TableCell>
                                     <TableCell>
                                         <Button variant="outlined" color="primary" onClick={()=>handleClickOpen(c.type, c.workername, c.business)}>
                                             <text style={styles1.textStyle}>계약서</text>

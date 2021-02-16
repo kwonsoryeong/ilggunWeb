@@ -7,9 +7,11 @@ import TableHead from '@material-ui/core/TableHead';
 import TableBody from '@material-ui/core/TableBody';
 import TableRow from '@material-ui/core/TableRow';
 import TableCell from '@material-ui/core/TableCell';
-import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css';
-//https://www.npmjs.com/package/react-calendar
+// import Calendar from 'react-calendar';
+// import 'react-calendar/dist/Calendar.css';
+import FullCalendar from '@fullcalendar/react'
+import dayGridPlugin from '@fullcalendar/daygrid'
+import interactionPlugin from "@fullcalendar/interaction";
 
 const workers = [
     {
@@ -43,7 +45,10 @@ const Workermanage = ({location, match}) => {
     console.log(query);
     const detail = query.detail === 'true';
 
-    const [value, onChange] = useState(new Date());
+    //const [value, onChange] = useState(new Date());
+    const handleDateClick = (args) => {
+        alert(args);
+      };
 
     return (
         <div style={styles.area}>
@@ -59,34 +64,56 @@ const Workermanage = ({location, match}) => {
                 }  */}
 
                 <div style={styles.calendarArea}>
-                    <Calendar
+                    {/* <Calendar
                         onChange={onChange}
                         value={value}
+                    /> */}
+                    <FullCalendar 
+                        defaultView="dayGridMonth" 
+                        plugins={[ dayGridPlugin, interactionPlugin ]}
+                        header={{
+                            left:'prev',
+                            center:'title',
+                            right:'next'
+                        }}
+                        locale='ko'
+                        selectable='true'
+                        height='50vw'
+                        events={[
+                            { title: '김수정 근무', date: '2021-02-01' },
+                            { title: '권소령 근무', date: '2021-02-01' }
+                        ]}
+                        eventClick={ //이벤트 클릭하면 나오는 것
+                            function(arg){
+                                alert(arg.event.title)
+                            }
+                        }
+                        dateClick={handleDateClick}
                     />
                 </div>
 
                 <div style={styles.tableArea}>
-                    <Table>
+                    <Table style={{width:'65vw', marginTop:'2vw'}}>
                         <TableHead>
-                            <TableRow>
-                                <TableCell>번호</TableCell>
-                                <TableCell>이름</TableCell>
-                                <TableCell>업무</TableCell>
-                                <TableCell>출근시간</TableCell>
-                                <TableCell>퇴근시간</TableCell>
-                                <TableCell>휴가여부</TableCell>
+                            <TableRow style={{background:'#8ECEC2'}}>
+                                <TableCell align="center" style={styles.textStyle,{width:'5vw', fontWeight:'bold'}}>번호</TableCell>
+                                <TableCell align="center" style={styles.textStyle,{width:'10vw', fontWeight:'bold'}}>이름</TableCell>
+                                <TableCell align="center" style={styles.textStyle,{width:'12vw', fontWeight:'bold'}}>업무</TableCell>
+                                <TableCell align="center" style={styles.textStyle,{width:'10vw', fontWeight:'bold'}}>출근시간</TableCell>
+                                <TableCell align="center" style={styles.textStyle,{width:'10vw', fontWeight:'bold'}}>퇴근시간</TableCell>
+                                <TableCell align="center" style={styles.textStyle,{width:'8vw', fontWeight:'bold'}}>휴가여부</TableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody>
                             {workers.map(c => {
                                 return (
                                 <TableRow>
-                                    <TableCell>{c.No}</TableCell>
-                                    <TableCell>{c.name}</TableCell>
-                                    <TableCell>{c.job}</TableCell>
-                                    <TableCell>{c.startTime}</TableCell>
-                                    <TableCell>{c.endTime}</TableCell>
-                                    <TableCell>{c.vacation}</TableCell>
+                                    <TableCell align="center" style={styles.textStyle}>{c.No}</TableCell>
+                                    <TableCell align="center" style={styles.textStyle}>{c.name}</TableCell>
+                                    <TableCell align="center" style={styles.textStyle}>{c.job}</TableCell>
+                                    <TableCell align="center" style={styles.textStyle}>{c.startTime}</TableCell>
+                                    <TableCell align="center" style={styles.textStyle}>{c.endTime}</TableCell>
+                                    <TableCell align="center" style={styles.textStyle}>{c.vacation}</TableCell>
                                 </TableRow>
                                 )
                             })}
@@ -112,7 +139,7 @@ const styles={
     },
     menuArea:{
         width:'20vw',
-        height:'120%', 
+        height:'200%', 
         flexDirection:'column', 
         float:'left',
         backgroundColor:'#8ECEC2',
@@ -137,15 +164,19 @@ const styles={
         fontFamily: 'NanumSquareR'
     },
     calendarArea:{
-        width:'70vw',
-        height:'30vw',
+        width:'60vw',
+        height:'auto',
         paddingTop:'2vw',
-        paddingLeft:'5vw', 
-
+        marginLeft:'5vw', 
     },
     tableArea:{
         width:'70vw',
         paddingTop:'2vw',
         paddingLeft:'5vw', 
-    }
+    },    
+    textStyle:{ 
+        color:'#040525',
+        fontFamily: 'NanumSquareR',
+        fontSize:'1vw', 
+    },
 }
